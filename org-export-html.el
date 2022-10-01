@@ -143,7 +143,8 @@ yes' in the block header.")
 ;;; html id tags are not deterministic. every export call results in different output
 ;;; which is a pain for version control. make IDs relative to the content
 ;;; from https://github.com/alphapapa/unpackaged.el#export-to-html-with-useful-anchors
-
+(require 'easy-mmode)
+(require 'dash)
 (defun unpackaged/org-export-new-title-reference (datum cache)
     "Return new reference for DATUM that is unique in CACHE."
     (cl-macrolet ((inc-suffixf (place)
